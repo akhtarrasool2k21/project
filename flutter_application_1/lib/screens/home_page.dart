@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/singale_product.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -93,8 +94,22 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          Text('30%Off'),
-                          Text('On all Vegitables'),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 50),
+                            child: Text(
+                              '30%Off',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'On all Vegitables Products',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15.0),
+                          ),
                         ],
                       ),
                     ),
@@ -107,10 +122,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 15.0,
-              horizontal: 15.0,
-            ),
+            padding: const EdgeInsets.all(15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -123,143 +135,67 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                Container(
-                  height: 230.0,
-                  width: 170.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Color(0xffd9dad9),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage('assets/bg3.png'),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      // SizedBox(
-                      //   height: 10.0,
-                      // ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 6.0),
-                              child: Text(
-                                'Fresh Basil',
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 6.0),
-                              child: Text(
-                                "50\$/50Gram",
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 2.0,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      padding: EdgeInsets.only(left: 2),
-                                      height: 30.0,
-                                      // width: 50.0,
-                                      decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.grey),
-                                          borderRadius:
-                                              BorderRadius.circular(10.0)),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            '50 Gram',
-                                            style: TextStyle(
-                                              // fontSize: 10.0,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                          Icon(
-                                            Icons.arrow_downward_rounded,
-                                            size: 15,
-                                            color: Colors.yellow,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 5),
-                                  Expanded(
-                                    child: Container(
-                                      padding: EdgeInsets.only(left: 2),
-                                      height: 30.0,
-                                      width: 20.0,
-                                      decoration: BoxDecoration(
-                                          border:
-                                              Border.all(color: Colors.grey),
-                                          borderRadius:
-                                              BorderRadius.circular(10.0)),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Icon(
-                                            Icons.remove,
-                                            size: 15.0,
-                                            color: Colors.yellow,
-                                          ),
-                                          Text(
-                                            '1',
-                                            style: TextStyle(
-                                              color: Colors.yellow,
-                                            ),
-                                          ),
-                                          Icon(
-                                            Icons.add,
-                                            size: 15.0,
-                                            color: Colors.yellow,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                SingaleProduct(
+                    productImage: 'assets/bg3.png',
+                    productName: 'Frash basil',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg4.png',
+                    productName: 'Frash Tomato',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg5.png',
+                    productName: 'Frash Cabbage',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg6.png',
+                    productName: 'Frash Eggplant',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg7.png',
+                    productName: 'Frash Chili Pepper',
+                    productDescibtion: '50\$/50Gram'),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Fresh Fruits'),
+                Text('View All'),
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                SingaleProduct(
+                    productImage: 'assets/bg8.png',
+                    productName: 'Frash basil',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg4.png',
+                    productName: 'Frash Tomato',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg5.png',
+                    productName: 'Frash Cabbage',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg6.png',
+                    productName: 'Frash Eggplant',
+                    productDescibtion: '50\$/50Gram'),
+                SingaleProduct(
+                    productImage: 'assets/bg7.png',
+                    productName: 'Frash Chili Pepper',
+                    productDescibtion: 'Order Now'),
               ],
             ),
           ),
