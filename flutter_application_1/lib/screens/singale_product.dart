@@ -33,6 +33,7 @@ class SingaleProduct extends StatelessWidget {
                   flex: 2,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    // ignore: avoid_unnecessary_containers
                     child: Container(
                       child: Image(image: AssetImage(productImage!)),
                     ),
